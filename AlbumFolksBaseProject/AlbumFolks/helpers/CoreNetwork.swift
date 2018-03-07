@@ -40,6 +40,10 @@ class CoreNetwork {
 
     static func handleResponse<T>(_ response: DataResponse<T>) -> (T?,NetworkError?) {
         
+        if !UserDefaults.standard.bool(forKey: "connection") {
+            return (nil,.Connection)
+        }
+
         let status = response.response?.statusCode
         switch status ?? -1 {
         case 403:

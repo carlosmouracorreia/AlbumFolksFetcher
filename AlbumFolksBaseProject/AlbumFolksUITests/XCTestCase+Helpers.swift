@@ -30,7 +30,7 @@ extension XCTestCase {
     internal func goToSearch(_ app: XCUIApplication) {
         
         XCTContext.runActivity(named: "EnterSearch", block: { _ in
-            XCUIApplication().navigationBars["AlbumFolks"].buttons["Search"].firstMatch.tap()
+            app.navigationBars["AlbumFolks"].buttons["Search"].firstMatch.tap()
         })
     }
     

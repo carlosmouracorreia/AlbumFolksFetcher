@@ -12,6 +12,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireObjectMapper
+  - ObjectMapper
   - PopupDialog (= 0.6.2)
 
 SPEC CHECKSUMS:
@@ -21,6 +22,6 @@ SPEC CHECKSUMS:
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PopupDialog: d4336d7274a6aa3af4cb26d8b6691510eba90cc3
 
-PODFILE CHECKSUM: 2dab8d98fed8e46221345d0c2af0b63511ca3fd6
+PODFILE CHECKSUM: 1d8dbf824c1864a7648ffdf0653d1db9ba2e638e
 
 COCOAPODS: 1.4.0
