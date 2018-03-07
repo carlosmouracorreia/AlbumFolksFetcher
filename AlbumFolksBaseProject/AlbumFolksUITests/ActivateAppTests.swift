@@ -11,17 +11,21 @@ import XCTest
 class ActivateAppTests: XCTestCase {
     
     //weirdly, works the same as if initialized in the setUp function, I prefer to keep it here
-    var app = XCUIApplication()
+    lazy var app : XCUIApplication = {
+       let app = XCUIApplication()
+        
+        app.launchArguments.append("--uitesting")
+        app.activate()
+        
+        return app
+    }()
         
     override func setUp() {
         super.setUp()
 
-        // In UI tests it is usually best to stop immediately when a failure occurs. - this bool is not working for activation methodology.
+        // In UI tests it is usually best to stop immediately when a failure occurs. - actually this bool is not working for activation methodology.
         continueAfterFailure = false
-        
-        //app.launchArguments.append("--uitesting")
-        //app.launchArguments.append("Test_Search_Artists")
-        app.activate()
+      
         
     }
     
@@ -30,17 +34,18 @@ class ActivateAppTests: XCTestCase {
     }
     
     
-    func test1InvalidSearchReturnsNoResults() {
+    func test1_InvalidSearchReturnsNoResults() {
         
         self.goToSearch(app)
-        self.typeSearch(app, "n0t_ex1st")
+        self.typeSearch(app, "_123_n0t_ex1st")
 
         let artistCell = app.tables.cells["ArtistCell"].firstMatch
         self.verifyResponseElementNotExist(app, element: artistCell)
 
     }
     
-    func test2VerifyArtistCellOnSearch() {
+
+    func test2_VerifyArtistCellOnSearch() {
         
         self.typeSearch(app, "King Gizzard")
 
@@ -54,13 +59,12 @@ class ActivateAppTests: XCTestCase {
             activity.add(cellAttachment)
             
             // TODO: do more validation here
-        
         })
         
     
     }
     
-    func test3ArtistAlbumsHaveBasicArtistInfo() {
+    func test3_ArtistAlbumsHaveBasicArtistInfo() {
         self.goToArtistAlbums(app, searchQuery: "Elliott Smith", launching: false)
     }
     

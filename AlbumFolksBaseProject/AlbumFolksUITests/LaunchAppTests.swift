@@ -18,16 +18,25 @@ import XCTest
 
 class LaunchAppTests: XCTestCase {
     
-    var app : XCUIApplication!
+    var app : XCUIApplication! {
+        didSet {
+            app.launchArguments.append("--uitesting")
+        }
+    }
     
     override func setUp() {
         super.setUp()
         
         continueAfterFailure = false
-        self.app = XCUIApplication()
-        app.launch()
         
-        self.goToSearch(app)
+        //Tests that need to start the up on their on method (exame for command line arguments) don't require this
+        if !self.name.contains("testSearchNoConnectionShowsPopup") {
+            self.app = XCUIApplication()
+            app.launch()
+            
+            self.goToSearch(app)
+        }
+      
     }
     
     override func tearDown() {
@@ -58,6 +67,24 @@ class LaunchAppTests: XCTestCase {
     
     func testArtistAlbumsHaveBasicArtistInfo() {
         self.goToArtistAlbums(app, searchQuery: "Elliott Smith", launching: true)
+    }
+    
+    func testSearchNoConnectionShowsConnectionPopup() {
+        
+        //launch the app again so we cant send command line specific arguments
+        self.app = XCUIApplication()
+        app.launchArguments.append("-mockDisableConnection")
+        app.launch()
+        
+        self.goToSearch(app)
+        self.typeSearch(app, "What is the internet")
+        
+        let artistCell = app.tables.cells["ArtistCell"].firstMatch
+        self.verifyResponseElementNotExist(app, element: artistCell)
+        
+
+        XCTAssert(self.app.alerts["AlertDialogConnection"].exists)
+        
     }
     
 }
