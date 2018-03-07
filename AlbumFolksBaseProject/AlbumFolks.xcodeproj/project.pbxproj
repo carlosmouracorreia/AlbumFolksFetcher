@@ -26,6 +26,9 @@
 		33309AB3DF5FB1E3693E01A9 /* Pods_AlbumFolksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFA7E81F0F79F13DDDAE36F /* Pods_AlbumFolksUITests.framework */; };
 		57D801A42C7789D47E4D71A0 /* Pods_AlbumFolks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5FA842F59832926313BFBE /* Pods_AlbumFolks.framework */; };
 		6738BA2F7D28499B1D21818A /* Pods_AlbumFolksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5F1CCE0C1EEE8118DC82F4 /* Pods_AlbumFolksTests.framework */; };
+		A09D9AC1204FEDE4006E424E /* LaunchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D9AC0204FEDE4006E424E /* LaunchAppTests.swift */; };
+		A09D9AC3204FEE02006E424E /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D9AC2204FEE02006E424E /* XCTestCase+Helpers.swift */; };
+		A09D9AC5204FF47E006E424E /* XCUIElement+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D9AC4204FF47E006E424E /* XCUIElement+Text.swift */; };
 		D02D3F80204417DC00B18C97 /* ArtistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02D3F7F204417DC00B18C97 /* ArtistCell.xib */; };
 		D02D3F8220441A8400B18C97 /* AlbumHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D3F8120441A8400B18C97 /* AlbumHeaderCell.swift */; };
 		D02D3F8420441B5600B18C97 /* ArtistInfoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02D3F8320441B5600B18C97 /* ArtistInfoHeaderCell.xib */; };
@@ -34,7 +37,7 @@
 		D05EB333202345DC00DC1D34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05EB331202345DC00DC1D34 /* Main.storyboard */; };
 		D05EB338202345DC00DC1D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05EB337202345DC00DC1D34 /* Assets.xcassets */; };
 		D05EB33B202345DC00DC1D34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05EB339202345DC00DC1D34 /* LaunchScreen.storyboard */; };
-		D05EB351202345DC00DC1D34 /* AlbumFolksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05EB350202345DC00DC1D34 /* AlbumFolksUITests.swift */; };
+		D05EB351202345DC00DC1D34 /* ActivateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05EB350202345DC00DC1D34 /* ActivateAppTests.swift */; };
 		D0FA97462024849A00C75C50 /* SearchArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FA97452024849A00C75C50 /* SearchArtistsVC.swift */; };
 		D0FA974820248CBC00C75C50 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FA974720248CBC00C75C50 /* AlbumCell.xib */; };
 		D0FA974A20248CD600C75C50 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FA974920248CD600C75C50 /* AlbumCell.swift */; };
@@ -93,6 +96,9 @@
 		4A5F1CCE0C1EEE8118DC82F4 /* Pods_AlbumFolksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumFolksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC7AB2C0F5DA21E4777633D /* Pods-AlbumFolksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumFolksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumFolksTests/Pods-AlbumFolksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5ECDD0B77FEB3B46436D1F92 /* Pods-AlbumFolksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumFolksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumFolksTests/Pods-AlbumFolksTests.release.xcconfig"; sourceTree = "<group>"; };
+		A09D9AC0204FEDE4006E424E /* LaunchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAppTests.swift; sourceTree = "<group>"; };
+		A09D9AC2204FEE02006E424E /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
+		A09D9AC4204FF47E006E424E /* XCUIElement+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Text.swift"; sourceTree = "<group>"; };
 		A5CE61EC548C7672B33214F2 /* Pods-AlbumFolks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumFolks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumFolks/Pods-AlbumFolks.debug.xcconfig"; sourceTree = "<group>"; };
 		CC5FA842F59832926313BFBE /* Pods_AlbumFolks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumFolks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02D3F7F204417DC00B18C97 /* ArtistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCell.xib; sourceTree = "<group>"; };
@@ -107,7 +113,7 @@
 		D05EB33C202345DC00DC1D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05EB341202345DC00DC1D34 /* AlbumFolksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumFolksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05EB34C202345DC00DC1D34 /* AlbumFolksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumFolksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D05EB350202345DC00DC1D34 /* AlbumFolksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFolksUITests.swift; sourceTree = "<group>"; };
+		D05EB350202345DC00DC1D34 /* ActivateAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateAppTests.swift; sourceTree = "<group>"; };
 		D05EB352202345DC00DC1D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0FA97452024849A00C75C50 /* SearchArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArtistsVC.swift; sourceTree = "<group>"; };
 		D0FA974720248CBC00C75C50 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
@@ -263,8 +269,11 @@
 		D05EB34F202345DC00DC1D34 /* AlbumFolksUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D05EB350202345DC00DC1D34 /* AlbumFolksUITests.swift */,
+				D05EB350202345DC00DC1D34 /* ActivateAppTests.swift */,
 				D05EB352202345DC00DC1D34 /* Info.plist */,
+				A09D9AC0204FEDE4006E424E /* LaunchAppTests.swift */,
+				A09D9AC2204FEE02006E424E /* XCTestCase+Helpers.swift */,
+				A09D9AC4204FF47E006E424E /* XCUIElement+Text.swift */,
 			);
 			path = AlbumFolksUITests;
 			sourceTree = "<group>";
@@ -674,7 +683,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D05EB351202345DC00DC1D34 /* AlbumFolksUITests.swift in Sources */,
+				A09D9AC5204FF47E006E424E /* XCUIElement+Text.swift in Sources */,
+				A09D9AC1204FEDE4006E424E /* LaunchAppTests.swift in Sources */,
+				A09D9AC3204FEE02006E424E /* XCTestCase+Helpers.swift in Sources */,
+				D05EB351202345DC00DC1D34 /* ActivateAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

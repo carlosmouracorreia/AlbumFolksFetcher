@@ -23,10 +23,13 @@ class ArtistCell : UITableViewCell {
         
         self.customImageView.af_cancelImageRequest()
         self.customImageView.image = nil
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        self.accessibilityIdentifier = "ArtistCell"
         
         customImageView.layer.cornerRadius = customImageView.bounds.size.width / 2
         customImageView.clipsToBounds = true

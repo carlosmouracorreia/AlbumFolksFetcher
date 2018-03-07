@@ -61,6 +61,10 @@ class StoredAlbumsVC: UIViewController {
         self.performSegue(withIdentifier: "searchSegue", sender: nil)
     }
     
+    open func setUITestContents(_ contents: String) {
+        self.trackName.text = contents
+    }
+    
 }
 
 extension StoredAlbumsVC : TrackChosenDelegate {

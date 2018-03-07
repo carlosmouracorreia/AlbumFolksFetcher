@@ -42,6 +42,7 @@ class SearchArtistsVC : UIViewController {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
+            
             if #available(iOS 11.0, *) {
                 self.tableView.contentInsetAdjustmentBehavior = .never
             } else {
@@ -69,6 +70,9 @@ class SearchArtistsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.accessibilityIdentifier = "searchTableView"
+        
         
         self.searchController = UISearchController(searchResultsController:  nil)
         showEmptySearch()
