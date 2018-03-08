@@ -1,18 +1,19 @@
 //
-//  AlbumFolksTests.swift
-//  AlbumFolksTests
+//  AlbumFolksEarlGreyTests.swift
+//  AlbumFolksEarlGreyTests
 //
-//  Created by Carlos Correia on 07/03/2018.
+//  Created by Carlos Correia on 08/03/2018.
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
 import XCTest
+import EarlGrey
 
-class AlbumFolksTests: XCTestCase {
+class AlbumFolksEarlGreyTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+  
     }
     
     override func tearDown() {
@@ -21,8 +22,12 @@ class AlbumFolksTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        //let vc = storyboard.instantiateViewController(withIdentifier: "AlbumVCTestEntrance") as! AlbumVC
+        //_ = vc.view
+        
+        EarlGrey.select(elementWithMatcher: grey_keyWindow())
+            .assert(grey_sufficientlyVisible())
+        
     }
     
     func testPerformanceExample() {

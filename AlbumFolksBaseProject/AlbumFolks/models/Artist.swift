@@ -24,6 +24,14 @@ class Artist : Mappable {
     var mbid : String!
     
     
+    init(_ artistPopulator: ArtistPopulator) {
+        
+        self.name = artistPopulator.name
+        self.mbid = artistPopulator.mbid
+        self.lastFmUrl = artistPopulator.lastFmUrl
+        self.photoUrl = artistPopulator.photoUrl
+        
+    }
    
     required init?(map: Map){
         

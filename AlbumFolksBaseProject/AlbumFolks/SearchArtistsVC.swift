@@ -14,6 +14,17 @@ import AlamofireImage
  **/
 class SearchArtistsVC : UIViewController {
     
+    @objc(SearchArtistsVC_UIPopulator) class UIPopulator : NSObject, UIEntryPointProtocol {
+        func rootViewController() -> UIViewController {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SearchArtistsVC") as! SearchArtistsVC
+            let navigationVc = UINavigationController(rootViewController: vc)
+            
+            return navigationVc
+        }
+    }
+    
     static let MAX_RECENT_SEARCH_ENTRIES = 10
     static let MIN_SEARCH_QUERY_LENGTH = 2
     static let MAX_SEARCH_RESULTS = 12
