@@ -23,6 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(true, forKey: "connection")
         
         if CommandLine.arguments.contains("--uitesting") {
+            
+            
+          /*  if let board = readClipboard() {
+                print(board["UIPopulator"])
+                
+            } */
          
             if CommandLine.arguments.contains("-mockDisableConnection") {
                 UserDefaults.standard.set(false, forKey: "connection")
@@ -48,3 +54,17 @@ protocol UIEntryPointProtocol {
     func rootViewController() -> UIViewController
 }
 
+/**
+ READ CLIPBOARD
+ 
+ */
+public func readClipboard()-> [String: Any]?{
+    
+    let items =  UIPasteboard.general.items
+    
+    if items.count > 0 {
+        return items[0]
+    }
+    return nil
+    
+}

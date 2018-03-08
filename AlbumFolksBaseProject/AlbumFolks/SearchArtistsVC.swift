@@ -82,8 +82,7 @@ class SearchArtistsVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.accessibilityIdentifier = "searchTableView"
-        
+        self.view.accessibilityIdentifier = "SearchArtistsView"
         
         self.searchController = UISearchController(searchResultsController:  nil)
         showEmptySearch()

@@ -30,11 +30,13 @@ class LaunchAppTests: XCTestCase {
         continueAfterFailure = false
         
         
+        let ownStartTests = ["testSearchNoConnectionShowsPopup","testAlreadyOnSearch", "testAlreadyOnArtistAlbums"]
+        
         //Tests that need to start the up on their on method (exame for command line arguments) don't require this
-        if !self.name.contains("testSearchNoConnectionShowsPopup") &&  !self.name.contains("testAlreadyOnSearch") {
+        if !ownStartTests.contains(where: { self.name.contains($0)}) {
+        
             self.app = XCUIApplication()
             app.launch()
-            
             self.goToSearch(app)
         }
       
@@ -48,13 +50,10 @@ class LaunchAppTests: XCTestCase {
     func testVerifyArtistCellOnSearch() {
         
         self.typeSearch(app, "King Gizzard")
-        
         XCTContext.runActivity(named: "VerifyArtistCellOnSearch", block: { activity in
             
             let artistCell = app.tables.cells["ArtistCell"].firstMatch
-            
             self.verifyResponseElementExist(app, element: artistCell)
-            
             let cellAttachment = XCTAttachment(screenshot: artistCell.screenshot())
             cellAttachment.lifetime = .keepAlways
             activity.add(cellAttachment)
@@ -94,7 +93,16 @@ class LaunchAppTests: XCTestCase {
         app.launchArguments.append("-UIPopulator")
         app.launchArguments.append("SearchArtistsVC")
         app.launch()
-
+        
+        XCTAssert(app.otherElements["SearchArtistsView"].exists)
     }
     
+    func testAlreadyOnArtistAlbums() {
+        self.app = XCUIApplication()
+        app.launch()
+
+        setClipboard("UIPopulator", value: "ArtistAlbumsVC")
+        
+        XCTAssert(app.otherElements["ArtistAlbumsView"].exists)
+    }
 }

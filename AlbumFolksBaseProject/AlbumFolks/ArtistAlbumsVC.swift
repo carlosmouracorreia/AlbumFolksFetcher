@@ -95,6 +95,8 @@ class ArtistAlbumsVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.accessibilityIdentifier = "ArtistAlbumsView"
+        
         if #available(iOS 11.0, *) {
             self.collectionView.contentInsetAdjustmentBehavior = .never
         } else {
