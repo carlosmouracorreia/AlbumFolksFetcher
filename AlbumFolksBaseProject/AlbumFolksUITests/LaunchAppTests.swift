@@ -92,7 +92,7 @@ class LaunchAppTests: XCTestCase {
         self.app = XCUIApplication()
 
         app.launchArguments.append("-UIPopulator")
-        app.launchArguments.append("SearchArtistsVC")
+        app.launchArguments.append("ArtistAlbumsVC")
         
         app.launch()
 

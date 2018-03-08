@@ -41,10 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-   
-    
 }
-
 
 //Idea comes from here : https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID55
 protocol UIEntryPointProtocol {
