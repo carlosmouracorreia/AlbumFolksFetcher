@@ -47,3 +47,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 protocol UIEntryPointProtocol {
     func rootViewController() -> UIViewController
 }
+
