@@ -29,8 +29,9 @@ class LaunchAppTests: XCTestCase {
         
         continueAfterFailure = false
         
+        
         //Tests that need to start the up on their on method (exame for command line arguments) don't require this
-        if !self.name.contains("testSearchNoConnectionShowsPopup") {
+        if !self.name.contains("testSearchNoConnectionShowsPopup") &&  !self.name.contains("testAlreadyOnSearch") {
             self.app = XCUIApplication()
             app.launch()
             
@@ -85,6 +86,16 @@ class LaunchAppTests: XCTestCase {
 
         XCTAssert(self.app.alerts["AlertDialogConnection"].exists)
         
+    }
+    
+    func testAlreadyOnSearch() {
+        self.app = XCUIApplication()
+
+        app.launchArguments.append("-UIPopulator")
+        app.launchArguments.append("SearchArtistsVC")
+        
+        app.launch()
+
     }
     
 }

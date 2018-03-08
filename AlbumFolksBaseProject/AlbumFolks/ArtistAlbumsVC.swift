@@ -12,6 +12,18 @@ import AlamofireImage
 
 class ArtistAlbumsVC : UIViewController {
     
+    @objc(ArtistAlbumsVC_UIPopulator) class UIPopulator : NSObject, UIEntryPointProtocol {
+        func rootViewController() -> UIViewController {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ArtistAlbumsVC") as! ArtistAlbumsVC
+            vc.artist = Artist(ArtistPopulator(name: "Mac DeMarco", mbid: "f2492c31-54a8-4347-a1fc-f81f72873bbf", photoUrl: URL(string: "https://lastfm-img2.akamaized.net/i/u/174s/d329b2d3ce7e47b1c77bbb54c2c0dbbb.png"), lastFmUrl: URL(string: "https://www.last.fm/music/Mac+DeMarco")))
+            let navigationVc = UINavigationController(rootViewController: vc)
+            
+            return navigationVc
+        }
+    }
+    
     static let MAX_ALBUMS_TO_SHOW = 12
     
     fileprivate var noFetchedAlbums = false
@@ -430,3 +442,4 @@ extension UICollectionView {
         { _ in completion() }
     }
 }
+
