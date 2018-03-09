@@ -25,7 +25,7 @@ class AlertDialog : UIAlertController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let title = title, title.contains("Connection") {
+        if !UserDefaults.standard.bool(forKey: "connection") {
             self.view.accessibilityIdentifier = "AlertDialogConnection"
         } else {
             self.view.accessibilityIdentifier = "AlertDialog"
@@ -42,7 +42,7 @@ class AlertDialog : UIAlertController {
 }
 
 class AccessibilityObject : NSObject, UIAccessibilityIdentification {
-    //This is not too interesting, as majority of UI elements are sublcasses of UIView, and if they're not, such as this, just as an object reference, dont get triggered.
+
     var accessibilityIdentifier: String?
 
     override init() {

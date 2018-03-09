@@ -45,10 +45,8 @@ class ActivateAppTests: XCTestCase {
             cellAttachment.lifetime = .keepAlways
             activity.add(cellAttachment)
             
-            // TODO: do more validation here
         })
         
-    
     }
     
     func test3_artistAlbumsHaveBasicArtistInfo() {

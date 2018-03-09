@@ -59,11 +59,7 @@ class LaunchAppTests: XCTestCase {
             let cellAttachment = XCTAttachment(screenshot: artistCell.screenshot())
             cellAttachment.lifetime = .keepAlways
             activity.add(cellAttachment)
-            
-            // TODO: do more validation here
-            
         })
-        
         
     }
     
@@ -102,14 +98,15 @@ class LaunchAppTests: XCTestCase {
     func testAlreadyOnArtistAlbums() {
         
         self.app = XCUIApplication()
-        UIPasteboard.general.string = "ArtistAlbumsVC"
+        app.launchArguments.append("-UIPopulator")
+        app.launchArguments.append("ArtistAlbumsVC")
         app.launch()
         
         XCTAssert(app.otherElements["ArtistAlbumsView"].exists)
     }
     
     
-    func testSearchDelayArtistAlbums() {
+    func testSearchVisibleDelayArtistAlbumsVisible() {
     
         self.app = XCUIApplication()
         app.launchArguments.append("-UIPopulator")
@@ -117,13 +114,10 @@ class LaunchAppTests: XCTestCase {
         app.launch()
         
         XCTAssert(app.otherElements["SearchArtistsView"].exists)
-        
         sleep(1)
         
         UIPasteboard.general.string = "ArtistAlbumsVC"
-        
         sleep(1)
-        
         XCTAssert(app.otherElements["ArtistAlbumsView"].exists)
     }
     
