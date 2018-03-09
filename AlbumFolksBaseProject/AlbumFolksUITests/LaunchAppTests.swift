@@ -30,7 +30,7 @@ class LaunchAppTests: XCTestCase {
         continueAfterFailure = false
         
         
-        let ownStartTests = ["testSearchNoConnectionShowsPopup","testAlreadyOnSearch", "testAlreadyOnArtistAlbums"]
+        let ownStartTests = ["testSearchNoConnectionShowsPopup","testAlreadyOnSearch", "testAlreadyOnArtistAlbums", "testSearchDelayArtistAlbums"]
         
         //Tests that need to start the up on their on method (exame for command line arguments) don't require this
         if !ownStartTests.contains(where: { self.name.contains($0)}) {
@@ -44,6 +44,8 @@ class LaunchAppTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        
+        UIPasteboard.general.string = ""
     }
     
     
@@ -88,8 +90,8 @@ class LaunchAppTests: XCTestCase {
     }
     
     func testAlreadyOnSearch() {
+        
         self.app = XCUIApplication()
-
         app.launchArguments.append("-UIPopulator")
         app.launchArguments.append("SearchArtistsVC")
         app.launch()
@@ -98,11 +100,32 @@ class LaunchAppTests: XCTestCase {
     }
     
     func testAlreadyOnArtistAlbums() {
+        
         self.app = XCUIApplication()
+        UIPasteboard.general.string = "ArtistAlbumsVC"
         app.launch()
-
-        setClipboard("UIPopulator", value: "ArtistAlbumsVC")
         
         XCTAssert(app.otherElements["ArtistAlbumsView"].exists)
     }
+    
+    
+    func testSearchDelayArtistAlbums() {
+    
+        self.app = XCUIApplication()
+        app.launchArguments.append("-UIPopulator")
+        app.launchArguments.append("SearchArtistsVC")
+        app.launch()
+        
+        XCTAssert(app.otherElements["SearchArtistsView"].exists)
+        
+        sleep(1)
+        
+        UIPasteboard.general.string = "ArtistAlbumsVC"
+        
+        sleep(1)
+        
+        XCTAssert(app.otherElements["ArtistAlbumsView"].exists)
+    }
+    
+    
 }

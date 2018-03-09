@@ -13,27 +13,17 @@ class ActivateAppTests: XCTestCase {
     //weirdly, works the same as if initialized in the setUp function, I prefer to keep it here
     lazy var app : XCUIApplication = {
        let app = XCUIApplication()
-        
-        app.launchArguments.append("--uitesting")
+    
         app.activate()
-        
         return app
     }()
         
     override func setUp() {
         super.setUp()
-
-        // In UI tests it is usually best to stop immediately when a failure occurs. - actually this bool is not working for activation methodology.
         continueAfterFailure = false
-      
-        
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    
+
     func test1_InvalidSearchReturnsNoResults() {
         
         self.goToSearch(app)
@@ -41,15 +31,13 @@ class ActivateAppTests: XCTestCase {
 
         let artistCell = app.tables.cells["ArtistCell"].firstMatch
         self.verifyResponseElementNotExist(app, element: artistCell)
-
     }
     
 
     func test2_VerifyArtistCellOnSearch() {
-        
         self.typeSearch(app, "King Gizzard")
-
         XCTContext.runActivity(named: "VerifyArtistCellOnSearch", block: { activity in
+            
             
             let artistCell = app.tables.cells["ArtistCell"].firstMatch
             self.verifyResponseElementExist(app, element: artistCell)

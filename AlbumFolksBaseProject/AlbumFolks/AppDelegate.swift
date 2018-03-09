@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    fileprivate var pasteBoardChangeCount = UIPasteboard.general.changeCount
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
@@ -24,29 +24,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if CommandLine.arguments.contains("--uitesting") {
             
-            
-          /*  if let board = readClipboard() {
-                print(board["UIPopulator"])
-                
-            } */
-         
             if CommandLine.arguments.contains("-mockDisableConnection") {
                 UserDefaults.standard.set(false, forKey: "connection")
             }
             
+            var controllerToGo : String?
+            
             if CommandLine.arguments.contains("-UIPopulator"), let index = CommandLine.arguments.index(of: "-UIPopulator"), let afterIndex = CommandLine.arguments.index(index, offsetBy: 1, limitedBy: 0) {
-                if let c: NSObject.Type = NSClassFromString("\(CommandLine.arguments[afterIndex])_UIPopulator") as? NSObject.Type {
-                    let obj = c.init()
-                    if let uiEntryPoint = obj as? UIEntryPointProtocol {
-                        self.window?.rootViewController = uiEntryPoint.rootViewController()
-                    }
-                }
+                controllerToGo = CommandLine.arguments[afterIndex]
+            } else {
+                controllerToGo = UIPasteboard.general.string
             }
+            
+            if let controllerToGo = controllerToGo {
+                self.changeController(byStringIdentifier: controllerToGo)
+            }
+            
+            UIPasteboard.general.string = ""
+            
         }
+        
+        // NOT Working - NotificationCenter.default.addObserver(self, selector: #selector(pasteboardChanged), name: .UIPasteboardChanged, object: nil)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkPasteboardChanges), userInfo: nil, repeats: true)
         
         return true
     }
 
+    private func changeController(byStringIdentifier controllerToGo: String) {
+        if let c: NSObject.Type = NSClassFromString("\(controllerToGo)_UIPopulator") as? NSObject.Type {
+            let obj = c.init()
+            if let uiEntryPoint = obj as? UIEntryPointProtocol {
+                self.window?.rootViewController = uiEntryPoint.rootViewController()
+            }
+        }
+    }
+    
+    @objc func checkPasteboardChanges(_ timer : Timer) {
+        if UIPasteboard.general.changeCount != pasteBoardChangeCount {
+            
+            if let id = UIPasteboard.general.string {
+                self.changeController(byStringIdentifier: id)
+                self.pasteBoardChangeCount = UIPasteboard.general.changeCount
+            }
+        }
+    }
 }
 
 //Idea comes from here : https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID55
