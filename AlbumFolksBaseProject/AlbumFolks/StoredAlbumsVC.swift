@@ -9,9 +9,7 @@
 import UIKit
 import AlamofireImage
 
-protocol TrackChosenDelegate {
-    func trackChoosen(_ track: TrackViewPopulator)
-}
+
 
 class StoredAlbumsVC: UIViewController {
     

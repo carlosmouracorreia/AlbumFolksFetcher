@@ -1,5 +1,16 @@
 PODS:
-  - AlbumFolks (0.1.0)
+  - Alamofire (4.7.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - AlbumFolks (0.1.0):
+    - Alamofire
+    - AlamofireImage
+    - AlamofireObjectMapper
+    - DynamicBlurView (~> 2.0)
+  - DynamicBlurView (2.0.2)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -11,6 +22,7 @@ PODS:
   - Nimble-Snapshots/Core (6.3.0):
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
+  - ObjectMapper (3.1.0)
   - Quick (1.2.0)
 
 DEPENDENCIES:
@@ -25,10 +37,15 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AlbumFolks: f37949df5076d9ecb5e8040ed7baa7f57a526dfa
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  AlbumFolks: 318ef098cae81ae3c2fb0c9278837d6eb3762564
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
 PODFILE CHECKSUM: 21840b3bd233e5a703b5988b0ece91b7f22e23a1

@@ -5,23 +5,23 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
+  - DynamicBlurView (2.0.2)
   - ObjectMapper (3.1.0)
-  - PopupDialog (0.6.2)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireObjectMapper
+  - DynamicBlurView (~> 2.0)
   - ObjectMapper
-  - PopupDialog (= 0.6.2)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  PopupDialog: d4336d7274a6aa3af4cb26d8b6691510eba90cc3
 
-PODFILE CHECKSUM: f1c7f3857919bf571f217feee38b31cd435f311d
+PODFILE CHECKSUM: 41244f0f27a206513e87a870774bcbcb86a4b6a3
 
 COCOAPODS: 1.4.0

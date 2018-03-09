@@ -28,15 +28,19 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/carlosmouracorreia/AlbumFolksFetcher.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/correiask8'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.swift_version = '4.0'
   s.source_files = 'AlbumFolks/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'AlbumFolks' => ['AlbumFolks/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'AlbumFolks' => ['AlbumFolks/Assets/*', 'AlbumFolks/Assets/Main.storyboard', 'AlbumFolks/Assets/AlbumCell.xib', 'AlbumFolks/Assets/ArtistCell.xib', 'AlbumFolks/Assets/ArtistInfoHeaderCell.xib']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Alamofire'
+  s.dependency 'AlamofireObjectMapper'
+  s.dependency 'AlamofireImage'
+  s.dependency 'DynamicBlurView', '~> 2.0'
+
 end

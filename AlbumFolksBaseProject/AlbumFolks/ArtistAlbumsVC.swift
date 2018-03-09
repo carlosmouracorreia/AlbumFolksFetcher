@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PopupDialog
 import AlamofireImage
 
 class ArtistAlbumsVC : UIViewController {
