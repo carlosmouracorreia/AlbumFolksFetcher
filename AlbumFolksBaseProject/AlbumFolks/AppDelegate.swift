@@ -74,18 +74,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 protocol UIEntryPointProtocol {
     func rootViewController() -> UIViewController
 }
-
-/**
- READ CLIPBOARD
- 
- */
-public func readClipboard()-> [String: Any]?{
-    
-    let items =  UIPasteboard.general.items
-    
-    if items.count > 0 {
-        return items[0]
-    }
-    return nil
-    
-}

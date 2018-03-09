@@ -30,7 +30,7 @@ class LaunchAppTests: XCTestCase {
         continueAfterFailure = false
         
         
-        let ownStartTests = ["testSearchNoConnectionShowsPopup","testAlreadyOnSearch", "testAlreadyOnArtistAlbums", "testSearchDelayArtistAlbums"]
+        let ownStartTests = ["testSearchNoConnectionShowsConnectionPopup","testAlreadyOnSearch", "testAlreadyOnArtistAlbums", "testSearchDelayArtistAlbums"]
         
         //Tests that need to start the up on their on method (exame for command line arguments) don't require this
         if !ownStartTests.contains(where: { self.name.contains($0)}) {

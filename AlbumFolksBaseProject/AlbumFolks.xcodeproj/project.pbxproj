@@ -43,7 +43,6 @@
 		D05EB338202345DC00DC1D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05EB337202345DC00DC1D34 /* Assets.xcassets */; };
 		D05EB33B202345DC00DC1D34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05EB339202345DC00DC1D34 /* LaunchScreen.storyboard */; };
 		D05EB351202345DC00DC1D34 /* ActivateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05EB350202345DC00DC1D34 /* ActivateAppTests.swift */; };
-		D0C694BD20518C6F004CCCE5 /* XCTestCase+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C694BB20518359004CCCE5 /* XCTestCase+Clipboard.swift */; };
 		D0FA97462024849A00C75C50 /* SearchArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FA97452024849A00C75C50 /* SearchArtistsVC.swift */; };
 		D0FA974820248CBC00C75C50 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FA974720248CBC00C75C50 /* AlbumCell.xib */; };
 		D0FA974A20248CD600C75C50 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FA974920248CD600C75C50 /* AlbumCell.swift */; };
@@ -136,7 +135,6 @@
 		D05EB352202345DC00DC1D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0BD4CE120513B3A006F84C0 /* AlbumFolksEarlGreyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFolksEarlGreyTests.swift; sourceTree = "<group>"; };
 		D0BD4CE320513B3A006F84C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0C694BB20518359004CCCE5 /* XCTestCase+Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Clipboard.swift"; sourceTree = "<group>"; };
 		D0FA97452024849A00C75C50 /* SearchArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArtistsVC.swift; sourceTree = "<group>"; };
 		D0FA974720248CBC00C75C50 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		D0FA974920248CD600C75C50 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 				A09D9AC0204FEDE4006E424E /* LaunchAppTests.swift */,
 				A09D9AC4204FF47E006E424E /* XCUIElement+Text.swift */,
 				A09D9AC2204FEE02006E424E /* XCTestCase+Helpers.swift */,
-				D0C694BB20518359004CCCE5 /* XCTestCase+Clipboard.swift */,
 			);
 			path = AlbumFolksUITests;
 			sourceTree = "<group>";
@@ -749,7 +746,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C694BD20518C6F004CCCE5 /* XCTestCase+Clipboard.swift in Sources */,
 				A09D9AC5204FF47E006E424E /* XCUIElement+Text.swift in Sources */,
 				A09D9AC1204FEDE4006E424E /* LaunchAppTests.swift in Sources */,
 				A09D9AC3204FEE02006E424E /* XCTestCase+Helpers.swift in Sources */,

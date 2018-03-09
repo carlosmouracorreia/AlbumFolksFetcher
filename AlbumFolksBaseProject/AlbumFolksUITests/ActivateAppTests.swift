@@ -24,7 +24,7 @@ class ActivateAppTests: XCTestCase {
     }
     
 
-    func test1_InvalidSearchReturnsNoResults() {
+    func test1_invalidSearchReturnsNoResults() {
         
         self.goToSearch(app)
         self.typeSearch(app, "_123_n0t_ex1st")
@@ -34,10 +34,9 @@ class ActivateAppTests: XCTestCase {
     }
     
 
-    func test2_VerifyArtistCellOnSearch() {
+    func test2_verifyArtistCellOnSearch() {
         self.typeSearch(app, "King Gizzard")
         XCTContext.runActivity(named: "VerifyArtistCellOnSearch", block: { activity in
-            
             
             let artistCell = app.tables.cells["ArtistCell"].firstMatch
             self.verifyResponseElementExist(app, element: artistCell)
@@ -52,7 +51,7 @@ class ActivateAppTests: XCTestCase {
     
     }
     
-    func test3_ArtistAlbumsHaveBasicArtistInfo() {
+    func test3_artistAlbumsHaveBasicArtistInfo() {
         self.goToArtistAlbums(app, searchQuery: "Elliott Smith", launching: false)
     }
     
