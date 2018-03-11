@@ -6,6 +6,8 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
+public var LASTFM_API_KEY_VALUE = ""
+
 class Constants {
     struct COMMON_KEYS {
         static let API_KEY = "api_key"
@@ -27,5 +29,4 @@ class Constants {
     static let API_URL_FORMAT = API_URL_WITH_API_KEY + "&\(COMMON_KEYS.FORMAT_KEY_AND_VALUE)"
     static let API_URL_FORMAT_AND_METHOD = API_URL_FORMAT + "&\(COMMON_KEYS.METHOD_KEY)="
     
-    public static var LASTFM_API_KEY_VALUE = ""
 }
