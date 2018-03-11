@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (4.7.0)
+  - Alamofire (4.6.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
-  - AlbumFolks (0.1.0):
+  - AlbumFolks (0.1.1):
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
@@ -37,10 +37,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
-  AlbumFolks: 318ef098cae81ae3c2fb0c9278837d6eb3762564
+  AlbumFolks: fd2e5e05e172d7174415db145afc058bc6849614
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac

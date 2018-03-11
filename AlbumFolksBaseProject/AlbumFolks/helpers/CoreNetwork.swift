@@ -40,7 +40,7 @@ class CoreNetwork {
 
     static func handleResponse<T>(_ response: DataResponse<T>) -> (T?,NetworkError?) {
         
-        if !UserDefaults.standard.bool(forKey: "connection") {
+        if UserDefaults.standard.bool(forKey: "no_connection") {
             return (nil,.Connection)
         }
 

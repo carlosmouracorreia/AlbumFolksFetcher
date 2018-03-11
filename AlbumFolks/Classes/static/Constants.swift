@@ -23,9 +23,9 @@ class Constants {
     }
     
     static let API_URL = "https://ws.audioscrobbler.com/2.0/"
-    static let API_URL_WITH_API_KEY = API_URL + "?\(COMMON_KEYS.API_KEY)=\(API_KEY_VALUE)"
+    static let API_URL_WITH_API_KEY = API_URL + "?\(COMMON_KEYS.API_KEY)=\(LASTFM_API_KEY_VALUE)"
     static let API_URL_FORMAT = API_URL_WITH_API_KEY + "&\(COMMON_KEYS.FORMAT_KEY_AND_VALUE)"
     static let API_URL_FORMAT_AND_METHOD = API_URL_FORMAT + "&\(COMMON_KEYS.METHOD_KEY)="
     
-    static let API_KEY_VALUE = "817be21ebea3ab66566f275369c6c4ad"
+    public static var LASTFM_API_KEY_VALUE = ""
 }

@@ -18,12 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        UserDefaults.standard.set(true, forKey: "connection")
         
         if CommandLine.arguments.contains("--uitesting") {
             
             if CommandLine.arguments.contains("-mockDisableConnection") {
-                UserDefaults.standard.set(false, forKey: "connection")
+                UserDefaults.standard.set(true, forKey: "no_connection")
             }
             
             if CommandLine.arguments.contains("-UIPopulator"), let index = CommandLine.arguments.index(of: "-UIPopulator"),
