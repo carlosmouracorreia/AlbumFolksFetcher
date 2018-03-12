@@ -112,13 +112,15 @@ public var AF_MAX_ALBUMS_TO_SHOW : Int
 
 [AlbumVCEntryPointsTests.swift](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks_ExampleTests/AlbumVCEntryPointTests.swift) - Data flow testing corresponding to the core user interaction with the App i.e, visualize albums either from the API or saved.
 
-[LaunchAppTests.swift](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks_ExampleUITests/LaunchAppTests.swift) - Read more about UI Testing workflow here
+[LaunchAppTests.swift - UI Testing](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks_ExampleUITests/LaunchAppTests.swift) 
+
+[Consult UI Testing implementation details here](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Documentation/UITesting.md)
 
 ## Author
 
 carlosmouracorreia, pm.correia.carlos@gmail.com
 
-I'm also on Twitter - [twitter.com/correiask8](https://twitter.con/correiask8)
+I'm also on Twitter - [twitter.com/correiask8](https://twitter.com/correiask8)
 
 ## License
 

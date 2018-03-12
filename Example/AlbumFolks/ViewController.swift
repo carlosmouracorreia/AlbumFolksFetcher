@@ -30,19 +30,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var tags: UILabel!
     
     
-    fileprivate let imageDownloader = ImageDownloader()
-  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-       
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        
+        AF_LASTFM_API_KEY_VALUE = "5aa132979a0797b7f7e1c5fc01df0aff"
+        AF_ARTIST_ALBUMS_MAX_ALBUMS_TO_SHOW = 16
     }
     
 

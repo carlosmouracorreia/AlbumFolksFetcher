@@ -17,9 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        UserDefaults.standard.set(false, forKey: "no_connection")
-        AF_LASTFM_API_KEY_VALUE = "5aa132979a0797b7f7e1c5fc01df0aff"
+        /* https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Documentation/UITesting.md
+         Logic for UI Testing to work seamlessly needs to be within the app entrypoint
+         */
         
+        UserDefaults.standard.set(false, forKey: "no_connection")
         if CommandLine.arguments.contains("--uitesting") {
 
             AlbumFolksController.initUIClasses()
