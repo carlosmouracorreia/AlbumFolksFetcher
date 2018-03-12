@@ -70,7 +70,7 @@ class Artist : Mappable {
     }
     
     static func fetchAutoCompleteSearch(query: String, pagination: Pagination, successCallback: @escaping (PaginatedArtists) -> (), errorCallback: @escaping (NetworkError) -> ()) {
-        let urlString = String(format: Constants.API_URLS.ArtistAutoCompleteSearch,query,String(SearchArtistsVC.MAX_SEARCH_RESULTS),String(pagination.page))
+        let urlString = String(format: Constants.API_URLS.ArtistAutoCompleteSearch,query,String(AF_SEARCH_MAX_SEARCH_RESULTS),String(pagination.page))
         if let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             Alamofire.request(url).responseObject(keyPath: "results") { (response: DataResponse<PaginatedArtists>) in
                 let (success, error) = CoreNetwork.handleResponse(response)

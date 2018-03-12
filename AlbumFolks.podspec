@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlbumFolks'
-  s.version          = '0.1.2'
+  s.version          = '0.2.0'
   s.summary          = 'Track information fetcher from LastFM API.'
 
 # This description is used to generate tags and improve search results.

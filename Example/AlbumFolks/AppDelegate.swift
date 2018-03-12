@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UserDefaults.standard.set(false, forKey: "no_connection")
-        LASTFM_API_KEY_VALUE = "5aa132979a0797b7f7e1c5fc01df0aff"
+        AF_LASTFM_API_KEY_VALUE = "5aa132979a0797b7f7e1c5fc01df0aff"
         
         if CommandLine.arguments.contains("--uitesting") {
 

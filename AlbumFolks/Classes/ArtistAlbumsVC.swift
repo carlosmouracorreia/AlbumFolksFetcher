@@ -9,6 +9,8 @@
 import UIKit
 import AlamofireImage
 
+public var AF_ARTIST_ALBUMS_MAX_ALBUMS_TO_SHOW = 12
+
 class ArtistAlbumsVC : UIViewController {
     
     @objc(ArtistAlbumsVC_UIPopulator) class UIPopulator : NSObject, UIEntryPointProtocol {
@@ -22,8 +24,6 @@ class ArtistAlbumsVC : UIViewController {
             return navigationVc
         }
     }
-    
-    static let MAX_ALBUMS_TO_SHOW = 12
     
     fileprivate var noFetchedAlbums = false
     fileprivate var seeMoreLinkFooterActivated = false
@@ -116,8 +116,8 @@ class ArtistAlbumsVC : UIViewController {
                 return
             }
             
-            _self.artist.albums = Array(albums.prefix(ArtistAlbumsVC.MAX_ALBUMS_TO_SHOW))
-            _self.seeMoreLinkFooterActivated = albums.count > ArtistAlbumsVC.MAX_ALBUMS_TO_SHOW && artist.lastFmUrl != nil
+            _self.artist.albums = Array(albums.prefix(AF_ARTIST_ALBUMS_MAX_ALBUMS_TO_SHOW))
+            _self.seeMoreLinkFooterActivated = albums.count > AF_ARTIST_ALBUMS_MAX_ALBUMS_TO_SHOW && artist.lastFmUrl != nil
             _self.artist.requestedAlbumDetails = Dictionary<Album,Bool>()
             
             _self.collectionView.reloadData(completion: {

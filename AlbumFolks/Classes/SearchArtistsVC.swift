@@ -13,6 +13,12 @@ public protocol TrackChosenDelegate {
     func trackChoosen(_ track: TrackViewPopulator)
 }
 
+public var AF_SEARCH_MAX_RECENT_SEARCH_ENTRIES = 10
+public var AF_SEARCH_MIN_SEARCH_QUERY_LENGTH = 2
+public var AF_SEARCH_MAX_SEARCH_RESULTS = 12
+public var AF_SEARCH_MAX_PAGE_NUMBER = 50
+public var AF_SEARCH_PAGE_DECREMENT_FACTOR_PER_EXTRA_CHAR = 2
+
 /**
  * I didn't subclass UITableViewController as it makes it more flexible to change the layout /incrementally add more components starting with an embedded UITableView in a blank ViewController
  **/
@@ -34,14 +40,8 @@ class SearchArtistsVC : UIViewController {
         super.init(coder: aDecoder)
     }
     
-    static let MAX_RECENT_SEARCH_ENTRIES = 10
-    static let MIN_SEARCH_QUERY_LENGTH = 2
-    static let MAX_SEARCH_RESULTS = 12
-    static let MAX_PAGE_NUMBER = 50
-    static let PAGE_DECREMENT_FACTOR_PER_EXTRA_CHAR = 2
-    
     static let SEARCH_INTERVAL_TIMER = 0.5
-    static let DEFAULT_PAGINATION = Pagination(startIndex: 0, page: 1, total: SearchArtistsVC.MAX_SEARCH_RESULTS)
+    static let DEFAULT_PAGINATION = Pagination(startIndex: 0, page: 1, total: AF_SEARCH_MAX_SEARCH_RESULTS)
     
     fileprivate var searchTimer: Timer?
     fileprivate var artists : [Artist]?
@@ -261,8 +261,8 @@ extension SearchArtistsVC : UISearchControllerDelegate, UISearchResultsUpdating,
         /**
         * Conditions fall here if we're deleting past 3 chars or writing less than 3 chars
         **/
-        if newText.count < SearchArtistsVC.MIN_SEARCH_QUERY_LENGTH
-            || ( newText.count < currentText.count && newText.count < SearchArtistsVC.MIN_SEARCH_QUERY_LENGTH )  {
+        if newText.count < AF_SEARCH_MIN_SEARCH_QUERY_LENGTH
+            || ( newText.count < currentText.count && newText.count < AF_SEARCH_MIN_SEARCH_QUERY_LENGTH )  {
             //going to the suggestions again and invalidating previous timer callbacks
             searchTimer?.invalidate()
             showEmptySearch()
@@ -270,7 +270,7 @@ extension SearchArtistsVC : UISearchControllerDelegate, UISearchResultsUpdating,
         }
         
         isSearching = true
-        if newText.count >= SearchArtistsVC.MIN_SEARCH_QUERY_LENGTH && newText.count % 3 == 0 && !isFetching {
+        if newText.count >= AF_SEARCH_MIN_SEARCH_QUERY_LENGTH && newText.count % 3 == 0 && !isFetching {
             performSearch(newText)
         }
         
@@ -359,8 +359,8 @@ extension SearchArtistsVC {
         // Means we already searched for something with success
         if let pagination = currentPagination, let searchBarText = searchController.searchBar.text {
         
-            let decrementNumber = (SearchArtistsVC.PAGE_DECREMENT_FACTOR_PER_EXTRA_CHAR * (searchBarText.count - SearchArtistsVC.MIN_SEARCH_QUERY_LENGTH))
-            if (pagination.page + decrementNumber + 1 < SearchArtistsVC.MAX_PAGE_NUMBER) && (pagination.startIndex + SearchArtistsVC.MAX_SEARCH_RESULTS < pagination.total)  {
+            let decrementNumber = (AF_SEARCH_PAGE_DECREMENT_FACTOR_PER_EXTRA_CHAR * (searchBarText.count - AF_SEARCH_MIN_SEARCH_QUERY_LENGTH))
+            if (pagination.page + decrementNumber + 1 < AF_SEARCH_MAX_PAGE_NUMBER) && (pagination.startIndex + AF_SEARCH_MAX_SEARCH_RESULTS < pagination.total)  {
                 let askedPagination = Pagination(startIndex: 0, page: pagination.page + 1, total: pagination.total)
             
                 //If we already have this pagination in memory

@@ -6,7 +6,7 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
-public var LASTFM_API_KEY_VALUE = ""
+public var AF_LASTFM_API_KEY_VALUE = ""
 
 class Constants {
     struct COMMON_KEYS {
@@ -25,7 +25,7 @@ class Constants {
     }
     
     static let API_URL = "https://ws.audioscrobbler.com/2.0/"
-    static let API_URL_WITH_API_KEY = API_URL + "?\(COMMON_KEYS.API_KEY)=\(LASTFM_API_KEY_VALUE)"
+    static let API_URL_WITH_API_KEY = API_URL + "?\(COMMON_KEYS.API_KEY)=\(AF_LASTFM_API_KEY_VALUE)"
     static let API_URL_FORMAT = API_URL_WITH_API_KEY + "&\(COMMON_KEYS.FORMAT_KEY_AND_VALUE)"
     static let API_URL_FORMAT_AND_METHOD = API_URL_FORMAT + "&\(COMMON_KEYS.METHOD_KEY)="
     
