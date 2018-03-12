@@ -161,7 +161,7 @@ Well first, you'd have to fork the repo and send a pretty pull request in the en
 
 Basically we look for some code at run-time, making it all pretty organized inside the ViewController class we want to "inject".
 
-The **changeViewController()** function gets called in the appDelegate upon a UIPasteboard change (UIPasteboard.general.string optional) or a command-line argument with "-UIPopulator" flag:
+The **changeController()** function gets called in the appDelegate upon a UIPasteboard change (UIPasteboard.general.string optional) or a command-line argument with "-UIPopulator" flag:
 
 ```Swift
      private func changeController(byStringIdentifier controllerToGo: String) {
