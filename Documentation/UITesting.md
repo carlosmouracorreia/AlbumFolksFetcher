@@ -2,7 +2,7 @@
 
 ## Overview
 
-The example application includes some [extra code](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks/AppDelegate.swift) in the AppDelegate class to make it easier to test the app from a **user's perspective**. To do so, while preserving test qualities (especially isolation) , not having to reproduce users steps until getting to a specific user story, a common mechanism to deploy ViewControllers to the root of the navigation was implemented.
+The example application includes some [extra code](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks/AppDelegate.swift) in the AppDelegate class to make it easier to test the app from a **user's perspective**. To do so, while preserving test qualities (especially isolation) , not having to reproduce users steps until getting to a specific user story, a common mechanism to deploy ViewControllers to the root of the navigation is implemented.
 
 This is the important piece of code to enable communication in the AppDelegate:
 
@@ -32,7 +32,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Internal Communication
 
-In order to communicate with the App in a grey-box fashion (changing some of its internal state for the ease for black-box testing) 3 native mechanisms where used:
+In order to communicate with the App in a grey-box fashion (changing some of its internal state for the ease of black-box testing) 3 native mechanisms were used:
 
 
 ### CommandLine arguments
@@ -53,7 +53,8 @@ In the testing file you'd do the following:
 ```Swift
   func testSearchNoConnectionShowsConnectionPopup() {
         
-        //launch the app again (outside of the setUp method) so we cant send command line specific arguments
+        //launch the app again (outside of the setUp method) so we're able to 
+        // send command line specific arguments
         self.app = XCUIApplication()
         app.launchArguments.append("-mockDisableConnection")
         app.launch()
@@ -154,11 +155,11 @@ You may have noticed:
    UIPasteboard.general.string = "ArtistAlbumsVC"
 ```
 
-The big question might be, how does this work? And what If I want to do the same for the AlbumVC (Album information for instance).
+The big question might be, how does this work? And what If you want to do the same for the AlbumVC (Album information for instance)?
 
 Well first, you'd have to fork the repo and send a pretty pull request in the end :-)
 
-The key is, we look for some code in run-time, making it all pretty organized inside the ViewController class we want to "inject".
+Basically we look for some code at run-time, making it all pretty organized inside the ViewController class we want to "inject".
 
 The **changeViewController()** function gets called in the appDelegate upon a UIPasteboard change (UIPasteboard.general.string optional) or a command-line argument with "-UIPopulator" flag:
 
@@ -175,7 +176,7 @@ The **changeViewController()** function gets called in the appDelegate upon a UI
     }
 ```
 
-For the magic to happen, the compiler needs to know in compile time the classes name referenced from NSClassFromString. To do so, we make a small invocation after the UITesting validation (on the appDelegate didFinishLaunchWithOptions):
+For the magic to happen, the compiler needs to know in compile time the classes name referenced from NSClassFromString. To do so, we make a small invocation after the UITesting validation (on the appDelegate:didFinishLaunchWithOptions):
 
 ```Swift
      AlbumFolksController.initUIClasses()
@@ -189,7 +190,7 @@ For the magic to happen, the compiler needs to know in compile time the classes 
 ```
 
 
-By last we define our logic to populate the viewController with the necessary data/state, inside the class definition of itself - like this:
+By last we define our logic to populate the viewController with the necessary data/state, inside the class definition of itself (a bit much like the [Command pattern](https://en.wikipedia.org/wiki/Command_pattern)) - like this:
 
 ```Swift
 
