@@ -11,4 +11,10 @@ target 'AlbumFolks_Example' do
     pod 'FBSnapshotTestCase' , '~> 2.1.4'
     pod 'Nimble-Snapshots' , '~> 6.3.0'
   end
+
+  target 'AlbumFolks_ExampleTests' do
+  	inherit! :search_paths
+
+  	pod 'AlbumFolks', :path => '../'
+  end
 end

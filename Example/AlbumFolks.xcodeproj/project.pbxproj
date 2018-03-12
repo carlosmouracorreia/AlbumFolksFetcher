@@ -13,8 +13,18 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		72FB9B246D61AD2ED8805786 /* Pods_AlbumFolks_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB2FD0537C4AE67591CD4A4 /* Pods_AlbumFolks_ExampleTests.framework */; };
 		91767CB6A562C080A32F681B /* Pods_AlbumFolks_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283CF0957101B9C195E73D51 /* Pods_AlbumFolks_Example.framework */; };
 		D066B2332052DFB800A0176F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066B2322052DFB700A0176F /* ViewController.swift */; };
+		D0B7526F20566FD500193D3F /* DeserializeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7526A20566FD500193D3F /* DeserializeHelpers.swift */; };
+		D0B7527020566FD500193D3F /* AlbumVCEntryPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7526B20566FD500193D3F /* AlbumVCEntryPointTests.swift */; };
+		D0B7527120566FD500193D3F /* testArtistAlbums.json in Resources */ = {isa = PBXBuildFile; fileRef = D0B7526C20566FD500193D3F /* testArtistAlbums.json */; };
+		D0B7527220566FD500193D3F /* testArtistHeading.json in Resources */ = {isa = PBXBuildFile; fileRef = D0B7526D20566FD500193D3F /* testArtistHeading.json */; };
+		D0B7527320566FD500193D3F /* testAlbumDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = D0B7526E20566FD500193D3F /* testAlbumDetail.json */; };
+		D0B752862056732C00193D3F /* LaunchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B752822056732C00193D3F /* LaunchAppTests.swift */; };
+		D0B752872056732C00193D3F /* XCUIElement+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B752832056732C00193D3F /* XCUIElement+Text.swift */; };
+		D0B752882056732C00193D3F /* ActivateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B752842056732C00193D3F /* ActivateAppTests.swift */; };
+		D0B752892056732C00193D3F /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B752852056732C00193D3F /* XCTestCase+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,9 +35,24 @@
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = AlbumFolks;
 		};
+		D0B7526520566FA000193D3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = AlbumFolks_Example;
+		};
+		D0B7527D205672E400193D3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = AlbumFolks_Example;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FB2FD0537C4AE67591CD4A4 /* Pods_AlbumFolks_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumFolks_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		283CF0957101B9C195E73D51 /* Pods_AlbumFolks_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumFolks_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5D46E179BD2A259F363225 /* Pods-AlbumFolks_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumFolks_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumFolks_Example/Pods-AlbumFolks_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		34942DB2C5F82FE2051B8AFE /* Pods-AlbumFolks_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumFolks_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumFolks_Tests/Pods-AlbumFolks_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -45,8 +70,23 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		609318BF08D76ADCAA808685 /* Pods_AlbumFolks_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumFolks_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AF5D534FD04962758BE758 /* Pods-AlbumFolks_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumFolks_ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumFolks_ExampleTests/Pods-AlbumFolks_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF5F1416CD4AC97C6AD1F9A0 /* Pods-AlbumFolks_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumFolks_ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumFolks_ExampleTests/Pods-AlbumFolks_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1E30CC738AD0B5A2653CBE4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D066B2322052DFB700A0176F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0B7526020566FA000193D3F /* AlbumFolks_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumFolks_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B7526420566FA000193D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B7526A20566FD500193D3F /* DeserializeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializeHelpers.swift; sourceTree = "<group>"; };
+		D0B7526B20566FD500193D3F /* AlbumVCEntryPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumVCEntryPointTests.swift; sourceTree = "<group>"; };
+		D0B7526C20566FD500193D3F /* testArtistAlbums.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testArtistAlbums.json; sourceTree = "<group>"; };
+		D0B7526D20566FD500193D3F /* testArtistHeading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testArtistHeading.json; sourceTree = "<group>"; };
+		D0B7526E20566FD500193D3F /* testAlbumDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testAlbumDetail.json; sourceTree = "<group>"; };
+		D0B75278205672E400193D3F /* AlbumFolks_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumFolks_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B7527C205672E400193D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B752822056732C00193D3F /* LaunchAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAppTests.swift; sourceTree = "<group>"; };
+		D0B752832056732C00193D3F /* XCUIElement+Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Text.swift"; sourceTree = "<group>"; };
+		D0B752842056732C00193D3F /* ActivateAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivateAppTests.swift; sourceTree = "<group>"; };
+		D0B752852056732C00193D3F /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +106,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0B7525D20566FA000193D3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72FB9B246D61AD2ED8805786 /* Pods_AlbumFolks_ExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B75275205672E400193D3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +130,8 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for AlbumFolks */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				D0B7526120566FA000193D3F /* AlbumFolks_ExampleTests */,
+				D0B75279205672E400193D3F /* AlbumFolks_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				C9289494B2CEC640E4D0BC62 /* Pods */,
 				6EC0B1C1C75951DE420DE1F7 /* Frameworks */,
@@ -86,6 +143,8 @@
 			children = (
 				607FACD01AFB9204008FA782 /* AlbumFolks_Example.app */,
 				607FACE51AFB9204008FA782 /* AlbumFolks_Tests.xctest */,
+				D0B7526020566FA000193D3F /* AlbumFolks_ExampleTests.xctest */,
+				D0B75278205672E400193D3F /* AlbumFolks_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +203,7 @@
 			children = (
 				283CF0957101B9C195E73D51 /* Pods_AlbumFolks_Example.framework */,
 				609318BF08D76ADCAA808685 /* Pods_AlbumFolks_Tests.framework */,
+				1FB2FD0537C4AE67591CD4A4 /* Pods_AlbumFolks_ExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,8 +215,35 @@
 				506334FE729498268B5BAABC /* Pods-AlbumFolks_Example.release.xcconfig */,
 				34942DB2C5F82FE2051B8AFE /* Pods-AlbumFolks_Tests.debug.xcconfig */,
 				49D67CAA8114F43F38ADE582 /* Pods-AlbumFolks_Tests.release.xcconfig */,
+				AF5F1416CD4AC97C6AD1F9A0 /* Pods-AlbumFolks_ExampleTests.debug.xcconfig */,
+				67AF5D534FD04962758BE758 /* Pods-AlbumFolks_ExampleTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0B7526120566FA000193D3F /* AlbumFolks_ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0B7526B20566FD500193D3F /* AlbumVCEntryPointTests.swift */,
+				D0B7526A20566FD500193D3F /* DeserializeHelpers.swift */,
+				D0B7526E20566FD500193D3F /* testAlbumDetail.json */,
+				D0B7526C20566FD500193D3F /* testArtistAlbums.json */,
+				D0B7526D20566FD500193D3F /* testArtistHeading.json */,
+				D0B7526420566FA000193D3F /* Info.plist */,
+			);
+			path = AlbumFolks_ExampleTests;
+			sourceTree = "<group>";
+		};
+		D0B75279205672E400193D3F /* AlbumFolks_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0B752842056732C00193D3F /* ActivateAppTests.swift */,
+				D0B752822056732C00193D3F /* LaunchAppTests.swift */,
+				D0B752852056732C00193D3F /* XCTestCase+Helpers.swift */,
+				D0B752832056732C00193D3F /* XCUIElement+Text.swift */,
+				D0B7527C205672E400193D3F /* Info.plist */,
+			);
+			path = AlbumFolks_ExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,13 +290,52 @@
 			productReference = 607FACE51AFB9204008FA782 /* AlbumFolks_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D0B7525F20566FA000193D3F /* AlbumFolks_ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B7526720566FA000193D3F /* Build configuration list for PBXNativeTarget "AlbumFolks_ExampleTests" */;
+			buildPhases = (
+				30CBB1E82FEE1C177E1FDC42 /* [CP] Check Pods Manifest.lock */,
+				D0B7525C20566FA000193D3F /* Sources */,
+				D0B7525D20566FA000193D3F /* Frameworks */,
+				D0B7525E20566FA000193D3F /* Resources */,
+				191D1352A94F9DF11A279E8A /* [CP] Embed Pods Frameworks */,
+				5197C6748CB09337A7F9DAEC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0B7526620566FA000193D3F /* PBXTargetDependency */,
+			);
+			name = AlbumFolks_ExampleTests;
+			productName = AlbumFolks_ExampleTests;
+			productReference = D0B7526020566FA000193D3F /* AlbumFolks_ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0B75277205672E400193D3F /* AlbumFolks_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B75281205672E400193D3F /* Build configuration list for PBXNativeTarget "AlbumFolks_ExampleUITests" */;
+			buildPhases = (
+				D0B75274205672E400193D3F /* Sources */,
+				D0B75275205672E400193D3F /* Frameworks */,
+				D0B75276205672E400193D3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0B7527E205672E400193D3F /* PBXTargetDependency */,
+			);
+			name = AlbumFolks_ExampleUITests;
+			productName = AlbumFolks_ExampleUITests;
+			productReference = D0B75278205672E400193D3F /* AlbumFolks_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -220,6 +346,20 @@
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					D0B7525F20566FA000193D3F = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = FD4QC3TPZN;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					D0B75277205672E400193D3F = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = FD4QC3TPZN;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -239,6 +379,8 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* AlbumFolks_Example */,
 				607FACE41AFB9204008FA782 /* AlbumFolks_Tests */,
+				D0B7525F20566FA000193D3F /* AlbumFolks_ExampleTests */,
+				D0B75277205672E400193D3F /* AlbumFolks_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -261,9 +403,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0B7525E20566FA000193D3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B7527320566FD500193D3F /* testAlbumDetail.json in Resources */,
+				D0B7527120566FD500193D3F /* testArtistAlbums.json in Resources */,
+				D0B7527220566FD500193D3F /* testArtistHeading.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B75276205672E400193D3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		191D1352A94F9DF11A279E8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlbumFolks_ExampleTests/Pods-AlbumFolks_ExampleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/AlbumFolks/AlbumFolks.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlbumFolks.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlbumFolks_ExampleTests/Pods-AlbumFolks_ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		27AD1F2C9A43D06E04D6521F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +481,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlbumFolks_Example/Pods-AlbumFolks_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		30CBB1E82FEE1C177E1FDC42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlbumFolks_ExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B3030E21E240C2314B6D6E7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,6 +521,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlbumFolks_Tests/Pods-AlbumFolks_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5197C6748CB09337A7F9DAEC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlbumFolks_ExampleTests/Pods-AlbumFolks_ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		95E326A7276D7A51ED7505E1 /* [CP] Check Pods Manifest.lock */ = {
@@ -402,6 +622,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0B7525C20566FA000193D3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B7527020566FD500193D3F /* AlbumVCEntryPointTests.swift in Sources */,
+				D0B7526F20566FD500193D3F /* DeserializeHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B75274205672E400193D3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B752892056732C00193D3F /* XCTestCase+Helpers.swift in Sources */,
+				D0B752872056732C00193D3F /* XCUIElement+Text.swift in Sources */,
+				D0B752862056732C00193D3F /* LaunchAppTests.swift in Sources */,
+				D0B752882056732C00193D3F /* ActivateAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -409,6 +649,16 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* AlbumFolks_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		D0B7526620566FA000193D3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* AlbumFolks_Example */;
+			targetProxy = D0B7526520566FA000193D3F /* PBXContainerItemProxy */;
+		};
+		D0B7527E205672E400193D3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* AlbumFolks_Example */;
+			targetProxy = D0B7527D205672E400193D3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -579,6 +829,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumFolks_Example.app/AlbumFolks_Example";
 			};
 			name = Debug;
 		};
@@ -596,6 +847,113 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumFolks_Example.app/AlbumFolks_Example";
+			};
+			name = Release;
+		};
+		D0B7526820566FA000193D3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF5F1416CD4AC97C6AD1F9A0 /* Pods-AlbumFolks_ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FD4QC3TPZN;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AlbumFolks_ExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carloscorreia.AlbumFolks-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumFolks_Example.app/AlbumFolks_Example";
+			};
+			name = Debug;
+		};
+		D0B7526920566FA000193D3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67AF5D534FD04962758BE758 /* Pods-AlbumFolks_ExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FD4QC3TPZN;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AlbumFolks_ExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carloscorreia.AlbumFolks-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumFolks_Example.app/AlbumFolks_Example";
+			};
+			name = Release;
+		};
+		D0B7527F205672E400193D3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FD4QC3TPZN;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AlbumFolks_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carloscorreia.AlbumFolks-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AlbumFolks_Example;
+			};
+			name = Debug;
+		};
+		D0B75280205672E400193D3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FD4QC3TPZN;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AlbumFolks_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carloscorreia.AlbumFolks-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AlbumFolks_Example;
 			};
 			name = Release;
 		};
@@ -625,6 +983,24 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0B7526720566FA000193D3F /* Build configuration list for PBXNativeTarget "AlbumFolks_ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B7526820566FA000193D3F /* Debug */,
+				D0B7526920566FA000193D3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0B75281205672E400193D3F /* Build configuration list for PBXNativeTarget "AlbumFolks_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B7527F205672E400193D3F /* Debug */,
+				D0B75280205672E400193D3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

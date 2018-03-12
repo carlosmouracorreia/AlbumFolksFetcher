@@ -6,6 +6,6 @@
 //
 
 import Foundation
-protocol UIEntryPointProtocol {
+public protocol UIEntryPointProtocol {
     func rootViewController() -> UIViewController
 }

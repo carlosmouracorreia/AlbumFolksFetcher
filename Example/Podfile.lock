@@ -5,7 +5,7 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
-  - AlbumFolks (0.1.1):
+  - AlbumFolks (0.1.2):
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
@@ -40,7 +40,7 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
-  AlbumFolks: fd2e5e05e172d7174415db145afc058bc6849614
+  AlbumFolks: efac007291587cfcc2803c7da6d61090e2b5a028
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
@@ -48,6 +48,6 @@ SPEC CHECKSUMS:
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
-PODFILE CHECKSUM: 21840b3bd233e5a703b5988b0ece91b7f22e23a1
+PODFILE CHECKSUM: 9c4e3c932936ec1033b43d8ac1c73c111e55ff38
 
 COCOAPODS: 1.4.0

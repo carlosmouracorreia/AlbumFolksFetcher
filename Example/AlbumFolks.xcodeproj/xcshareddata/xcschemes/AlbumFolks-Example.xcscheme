@@ -53,6 +53,26 @@
                ReferencedContainer = "container:AlbumFolks.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D0B7525F20566FA000193D3F"
+               BuildableName = "AlbumFolks_ExampleTests.xctest"
+               BlueprintName = "AlbumFolks_ExampleTests"
+               ReferencedContainer = "container:AlbumFolks.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D0B75277205672E400193D3F"
+               BuildableName = "AlbumFolks_ExampleUITests.xctest"
+               BlueprintName = "AlbumFolks_ExampleUITests"
+               ReferencedContainer = "container:AlbumFolks.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
