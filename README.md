@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/AlbumFolks.svg?style=flat)](http://cocoapods.org/pods/AlbumFolks)
 [![Platform](https://img.shields.io/cocoapods/p/AlbumFolks.svg?style=flat)](http://cocoapods.org/pods/AlbumFolks)
 
+This library allows for plug-n-play track (album information) download providing a simple UI/interface for search/fetch. Its inspired on [this original project](https://github.com/carlosmouracorreia/AlbumFolks) (persistent album info storage)
 
 ## Example
 
@@ -23,6 +24,44 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'AlbumFolks'
+```
+
+## Simple Usage
+
+Consult Example ViewController [here](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks/ViewController.swift).
+
+```Swift
+
+ AF_LASTFM_API_KEY_VALUE = "YOUR API KEY"
+
+ @IBAction func searchClicked(_ sender: UIBarButtonItem) {
+        let albumFolksController = AlbumFolksController(passingDelegate: self)
+        self.present(albumFolksController, animated: true, completion: nil)
+    }
+
+```
+
+```Swift
+
+extension ViewController : TrackChosenDelegate {
+    func trackChoosen(_ track: TrackViewPopulator) {
+
+        if let image = track.album.inMemoryImage {
+            self.albumImage.image = image
+        }
+        
+        self.trackName.text = "Track: \(track.number) - \(track.title)"
+
+        self.trackLength.text = "Track Length: \(track.lengthStatic ?? "No Info")"
+        
+        self.album.text = "Album: \(track.album.name)"
+        
+        self.artist.text = "Artist: \(track.album.artist.name)"
+        
+        self.tags.text = "Tags: \(track.album.tags ?? "No Info")"
+    }
+}
+
 ```
 
 ## Configurable Parameters 
@@ -70,12 +109,16 @@ public var AF_MAX_ALBUMS_TO_SHOW : Int
 * UIScrollView+InfiniteScroll
 
 ## Testing
-[AlbumVCEntryPointsTests.swift](https://github.com/carloscorreia94/AlbumFolks/tree/master/AlbumFolksTests/AlbumVCEntryPointsTests.swift) - Data flow testing corresponding to the core user interaction with the App i.e, visualize albums either from the API or saved.
 
+[AlbumVCEntryPointsTests.swift](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks_ExampleTests/AlbumVCEntryPointTests.swift) - Data flow testing corresponding to the core user interaction with the App i.e, visualize albums either from the API or saved.
+
+[LaunchAppTests.swift](https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Example/AlbumFolks_ExampleUITests/LaunchAppTests.swift) - Read more about UI Testing workflow here
 
 ## Author
 
-carloscorreia94, pm.correia.carlos@gmail.com
+carlosmouracorreia, pm.correia.carlos@gmail.com
+
+I'm also on Twitter - [twitter.com/correiask8](https://twitter.con/correiask8)
 
 ## License
 
