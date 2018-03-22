@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlbumFolks'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'Track information fetcher from LastFM API.'
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/carlosmouracorreia/AlbumFolksFetcher'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'carloscorreia94' => 'carloscorreia94@gmail.com' }
+  s.author           = { 'carlosmouracorreia' => 'pm.correia.carlos@gmail.com' }
   s.source           = { :git => 'https://github.com/carlosmouracorreia/AlbumFolksFetcher.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/correiask8'
 
