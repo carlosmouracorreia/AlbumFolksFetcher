@@ -1,10 +1,10 @@
 // https://github.com/Quick/Quick
 
-import Quick
-import Nimble
+//import Quick
+//import Nimble
 import AlbumFolks
 
-class TableOfContentsSpec: QuickSpec {
+/* class TableOfContentsSpec: QuickSpec {
     override func spec() {
         describe("these will fail") {
 
@@ -47,4 +47,4 @@ class TableOfContentsSpec: QuickSpec {
             }
         }
     }
-}
+} */
