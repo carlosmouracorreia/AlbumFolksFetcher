@@ -7,7 +7,6 @@
 //
 
 import AlbumFolks
-import AlamofireImage
 
 class ViewController: UIViewController {
     
