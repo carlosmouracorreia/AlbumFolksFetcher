@@ -7,9 +7,9 @@
 //
 
 import Alamofire
-import UIKit
+import ObjectMapper
 
-class Artist : Codable {
+class Artist : Mappable {
     
     var detail: ArtistDetail?
     var albums : [Album]?

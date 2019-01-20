@@ -6,12 +6,12 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
-import UIKit
+import ObjectMapper
 import Alamofire
 
 
 
-class ArtistDetail : Codable {
+class ArtistDetail : Mappable {
     fileprivate var tags : [Tag]?
     var description : String!
     

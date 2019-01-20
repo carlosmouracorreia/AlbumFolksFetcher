@@ -39,6 +39,7 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'Alamofire', '~> 5.0.0.beta.1'
+  s.dependency 'ObjectMapper'
   s.dependency 'Kingfisher'
   s.dependency 'DynamicBlurView', '~> 2.0'
 

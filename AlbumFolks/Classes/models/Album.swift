@@ -6,15 +6,15 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
-import UIKit
+import ObjectMapper
 import Alamofire
 
 
-class Album : Codable, Equatable, Hashable {
-    let photoUrl : URL?
+class Album : Mappable, Equatable, Hashable {
+    var photoUrl : URL?
     var loadedImage : UIImage?
-    let name : String
-    let id : String?
+    var name : String!
+    var id : String?
     var albumDetail : AlbumDetail?
     var artist : Artist!
 

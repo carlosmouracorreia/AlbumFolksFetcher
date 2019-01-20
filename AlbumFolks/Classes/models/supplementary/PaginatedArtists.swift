@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+import ObjectMapper
 
 struct Pagination {
     let startIndex, page, total : Int
@@ -24,7 +24,7 @@ extension Pagination : Hashable, Equatable {
     }
 }
 
-class PaginatedArtists : Codable {
+class PaginatedArtists : Mappable {
     var total: Int!
     var page: Int!
     var limit: Int!

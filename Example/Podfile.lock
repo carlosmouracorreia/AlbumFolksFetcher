@@ -4,8 +4,10 @@ PODS:
     - Alamofire (~> 5.0.0.beta.1)
     - DynamicBlurView (~> 2.0)
     - Kingfisher
+    - ObjectMapper
   - DynamicBlurView (2.0.2)
   - Kingfisher (5.1.0)
+  - ObjectMapper (3.4.2)
 
 DEPENDENCIES:
   - AlbumFolks (from `../`)
@@ -15,6 +17,7 @@ SPEC REPOS:
     - Alamofire
     - DynamicBlurView
     - Kingfisher
+    - ObjectMapper
 
 EXTERNAL SOURCES:
   AlbumFolks:
@@ -22,9 +25,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
-  AlbumFolks: 4aa51652149a32de849443e8cbe8ce7cc532a0cd
+  AlbumFolks: ce813574ebcbe3994f26168961f24cf41c05d20c
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
 
 PODFILE CHECKSUM: 548f88faf236060e17142fdea49b3c557f6d0940
 

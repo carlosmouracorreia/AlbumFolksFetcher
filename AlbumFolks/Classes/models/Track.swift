@@ -6,13 +6,13 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
-import UIKit
+import ObjectMapper
 import Alamofire
 
-class Track : Codable {
+class Track : Mappable {
     
-    let number: Int
-    let title: String
+    var number: Int!
+    var title: String!
     var lengthStatic: String?
     
     required init?(map: Map){
@@ -48,12 +48,5 @@ class Track : Codable {
         } else {
             return "\(hourTime):\((seconds % 3600) / 60):\(secondFormattedTime)"
         }
-    }
-}
-
-extension Track {
-    enum CodingKeys: String, CodingKey {
-        case title = "name"
-        case number = "@attr.rank"
     }
 }

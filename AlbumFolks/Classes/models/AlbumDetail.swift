@@ -6,11 +6,12 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
+import ObjectMapper
 import Alamofire
-import UIKit
 
 
-class AlbumDetail : Codable {
+
+class AlbumDetail : Mappable {
     
     fileprivate var tags : [Tag]?
     var tracks : [Track]!

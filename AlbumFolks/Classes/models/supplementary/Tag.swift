@@ -7,11 +7,21 @@
 //
 
 
-import UIKit
+import ObjectMapper
 
-class Tag : Codable {
+class Tag : Mappable {
     
-    let name : String
+    var name : String!
+    
+    required init?(map: Map){
+        guard let _: String = map["name"].value() else {
+            return nil
+        }
+    }
+    
+    func mapping(map: Map) {
+        name <- map["name"]
+    }
     
     static func getTagsString(_ tags: [Tag]) -> String? {
         
