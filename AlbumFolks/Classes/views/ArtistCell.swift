@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import Kingfisher
 
 class ArtistCell : UITableViewCell {
     
@@ -21,7 +21,7 @@ class ArtistCell : UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.customImageView.af_cancelImageRequest()
+        self.customImageView.kf.cancelDownloadTask()
         self.customImageView.image = nil
         
     }
@@ -58,15 +58,23 @@ class ArtistCell : UITableViewCell {
     
     public func setImage(_ url: URL) {
         
-        self.customImageView.af_setImage(withURL: url, placeholderImage: UIImage(named_pod: "loading_misc")!, completion: {
-            response in
+        self.customImageView.kf.setImage(with: url, placeholder: UIImage(named_pod: "loading_misc")!, options: nil, progressBlock: nil, completionHandler: {
+            [weak self] result in
             
-            if let _ = response.result.value {
-                
-            } else {
-                self.setImage(UIImage(named_pod: "no_media")!)
+            guard let sself = self else {
+                return
             }
+            
+            switch result {
+            case .success:
+                break
+            case .failure:
+                sself.setImage(UIImage(named_pod: "no_media")!)
+
+            }
+            
         })
+        
     }
     
     

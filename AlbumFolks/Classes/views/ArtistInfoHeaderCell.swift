@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import Kingfisher
 
 class ArtistInfoHeaderCell : UICollectionReusableView {
     
@@ -37,13 +37,21 @@ class ArtistInfoHeaderCell : UICollectionReusableView {
     public func setContent(_ artist: Artist) {
         
         if let url = artist.photoUrl {
-            self.imageView.af_setImage(withURL: url, placeholderImage: UIImage(named_pod: "loading_misc")!, completion: {
-                response in
-                if let image = response.result.value {
-                    self.imageView.image = image
-                } else {
-                    self.imageView.image = UIImage(named_pod: "no_media")!
+            
+            self.imageView.kf.setImage(with: url, placeholder: UIImage(named_pod: "loading_misc")!, options: nil, progressBlock: nil, completionHandler: {
+                [weak self] result in
+                
+                guard let sself = self else {
+                    return
                 }
+                
+                switch result {
+                case .success(let value):
+                    sself.imageView.image = value.image
+                case .failure:
+                    sself.imageView.image = UIImage(named_pod: "no_media")!
+                }
+                
             })
             
         } else {

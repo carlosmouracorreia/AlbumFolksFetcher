@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import Kingfisher
 
 class AlbumCell : UICollectionViewCell, CAAnimationDelegate {
     
@@ -76,16 +76,23 @@ class AlbumCell : UICollectionViewCell, CAAnimationDelegate {
             return
         }
         
-        self.imageView.af_setImage(withURL: url, placeholderImage: UIImage(named_pod: "loading_misc")!, completion: {
-            response in
-                
-            if let _image = response.result.value {
-                completion(_image)
-            } else {
-                print("Error loading image for url: \(url.absoluteString)")
-                self.setNoMediaImage(hadDetail: hadDetail)
+        self.imageView.kf.setImage(with: url, placeholder: UIImage(named_pod: "loading_misc")!, options: nil, progressBlock: nil, completionHandler: {
+            [weak self] result in
+            
+            guard let sself = self else {
+                return
             }
+            
+            switch result {
+            case .success(let value):
+                completion(value.image)
+            case .failure:
+                print("Error loading image for url: \(url.absoluteString)")
+                sself.setNoMediaImage(hadDetail: hadDetail)
+            }
+            
         })
+        
         
     }
     
@@ -119,9 +126,15 @@ class AlbumCell : UICollectionViewCell, CAAnimationDelegate {
     
     
     public static func fetchPhotoFrom(_ url: URL, downloader: ImageDownloader, completion: @escaping (UIImage) -> ()) {
-        downloader.download(URLRequest(url: url), completion: { response in
-            if let image = response.result.value {
-               completion(image)
+        
+        downloader.downloadImage(with: url, options: nil, progressBlock: nil, completionHandler: {
+            result in
+            
+            switch result {
+            case .success(let value):
+                completion(value.image)
+            case .failure(_):
+                break
             }
         })
     }

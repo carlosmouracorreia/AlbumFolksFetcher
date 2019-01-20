@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 public protocol TrackChosenDelegate {
     func trackChoosen(_ track: TrackViewPopulator)

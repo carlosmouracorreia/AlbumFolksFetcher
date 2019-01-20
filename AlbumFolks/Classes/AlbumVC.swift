@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import Kingfisher
 /**
  * Again, I didn't subclass UITableViewController as it makes it more flexible to change the layout/incrementally add more components starting with an embedded UITableView in a blank ViewController
  **/
@@ -30,15 +30,20 @@ class AlbumVC : UIViewController {
             self.albumInfoHeader.imageView.image = albumImage
             self.storedImage = albumImage
         } else if let photoUrl = albumViewPopulator.photoUrl {
-            self.albumInfoHeader.imageView.af_setImage(withURL: photoUrl, placeholderImage: UIImage(named_pod: "loading_misc")!, completion: {
-                [weak self] response in
+            
+            self.albumInfoHeader.imageView.kf.setImage(with: photoUrl, placeholder: UIImage(named_pod: "loading_misc")!, options: nil, progressBlock: nil, completionHandler: {
+                [weak self] result in
                 
-                guard let _self = self else {
+                guard let sself = self else {
                     return
                 }
                 
-                if response.result.value == nil {
-                    _self.albumInfoHeader.imageView.image = UIImage(named_pod: "no_media")!
+                switch result {
+                case .success(let value):
+                    break
+                case .failure:
+                    sself.albumInfoHeader.imageView.image = UIImage(named_pod: "no_media")!
+
                 }
                 
             })

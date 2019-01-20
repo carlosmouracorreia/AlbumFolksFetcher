@@ -6,15 +6,15 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
-import ObjectMapper
+import UIKit
 import Alamofire
 
 
-class Album : Mappable, Equatable, Hashable {
-    var photoUrl : URL?
+class Album : Codable, Equatable, Hashable {
+    let photoUrl : URL?
     var loadedImage : UIImage?
-    var name : String!
-    var id : String?
+    let name : String
+    let id : String?
     var albumDetail : AlbumDetail?
     var artist : Artist!
 
@@ -76,7 +76,7 @@ class Album : Mappable, Equatable, Hashable {
         let url = String(format: Constants.API_URLS.ArtistAlbums,artist.mbid)
         print("Request Album with URL: " + url)
 
-        Alamofire.request(url).responseArray(keyPath: "topalbums.album") { (response: DataResponse<[Album]>) in
+        AF.request(url).responseArray(keyPath: "topalbums.album") { (response: DataResponse<[Album]>) in
             let (success, error) = CoreNetwork.handleResponse(response)
             
             if let error = error {

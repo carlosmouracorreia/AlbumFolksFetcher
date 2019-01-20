@@ -6,7 +6,7 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
-import ObjectMapper
+import UIKit
 
 enum ImageSize: String {
     case small = "small"
@@ -15,7 +15,7 @@ enum ImageSize: String {
     //no need for extra large
 }
 
-class LastFmImage : Mappable {
+class LastFmImage : Codable {
     var url : URL!
     var imageSize: ImageSize!
     

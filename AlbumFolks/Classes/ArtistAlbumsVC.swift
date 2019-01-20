@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import Kingfisher
 
 public var AF_ARTIST_ALBUMS_MAX_ALBUMS_TO_SHOW = 12
 
@@ -28,7 +28,7 @@ class ArtistAlbumsVC : UIViewController {
     fileprivate var noFetchedAlbums = false
     fileprivate var seeMoreLinkFooterActivated = false
     fileprivate var selectedAlbumIndexPath : IndexPath?
-    fileprivate let imageDownloader = ImageDownloader()
+    fileprivate let imageDownloader = ImageDownloader(name: "AlbumFolks")
     
     fileprivate var artistCell : ArtistInfoHeaderCell?
     

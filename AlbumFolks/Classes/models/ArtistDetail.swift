@@ -6,12 +6,12 @@
 //  Copyright © 2018 carlosmouracorreia. All rights reserved.
 //
 
-import ObjectMapper
+import UIKit
 import Alamofire
 
 
 
-class ArtistDetail : Mappable {
+class ArtistDetail : Codable {
     fileprivate var tags : [Tag]?
     var description : String!
     
@@ -50,7 +50,7 @@ class ArtistDetail : Mappable {
         
         let URL = String(format: Constants.API_URLS.ArtistDetail,artistId)
         
-            Alamofire.request(URL).responseObject(keyPath: "artist") { (response: DataResponse<ArtistDetail>) in
+            AF.request(URL).responseObject(keyPath: "artist") { (response: DataResponse<ArtistDetail>) in
                     let (success, error) = CoreNetwork.handleResponse(response)
                 
                     if let error = error {
