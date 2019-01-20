@@ -12,6 +12,7 @@ public class AlbumViewPopulator {
     public var photoUrl : URL?
     public var name : String
     public var tags : String?
+    public var mbid: String?
     public var hashString : String
     public var tracks = [TrackViewPopulator]()
     public var artist : ArtistPopulator
@@ -21,6 +22,7 @@ public class AlbumViewPopulator {
         self.inMemoryImage = image
         self.photoUrl = album.photoUrl
         self.name = album.name
+        self.mbid = album.id
         self.artist = ArtistPopulator(name: album.artist.name, mbid: album.artist.mbid, photoUrl: album.artist.photoUrl, lastFmUrl: album.artist.lastFmUrl)
         self.hashString = String(album.hashValue)
         
