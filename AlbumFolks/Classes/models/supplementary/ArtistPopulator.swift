@@ -7,6 +7,8 @@
 //
 
 public struct ArtistPopulator {
-    public let name, mbid : String
-    public var photoUrl, lastFmUrl : URL?
+    public let name : String
+    public let mbid: String?
+    public var photoUrl : URL?
+    public var lastFmUrl: URL
 }

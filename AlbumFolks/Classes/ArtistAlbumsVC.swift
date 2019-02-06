@@ -18,7 +18,7 @@ class ArtistAlbumsVC : UIViewController {
             
             let storyboard = UIStoryboard(name: "Main", bundle: GenericHelpers.getBundle())
             let vc = storyboard.instantiateViewController(withIdentifier: "ArtistAlbumsVC") as! ArtistAlbumsVC
-            vc.artist = Artist(ArtistPopulator(name: "Mac DeMarco", mbid: "f2492c31-54a8-4347-a1fc-f81f72873bbf", photoUrl: URL(string: "https://lastfm-img2.akamaized.net/i/u/174s/d329b2d3ce7e47b1c77bbb54c2c0dbbb.png"), lastFmUrl: URL(string: "https://www.last.fm/music/Mac+DeMarco")))
+            vc.artist = Artist(ArtistPopulator(name: "Mac DeMarco", mbid: "f2492c31-54a8-4347-a1fc-f81f72873bbf", photoUrl: URL(string: "https://lastfm-img2.akamaized.net/i/u/174s/d329b2d3ce7e47b1c77bbb54c2c0dbbb.png"), lastFmUrl: URL(string: "https://www.last.fm/music/Mac+DeMarco")!))
             let navigationVc = UINavigationController(rootViewController: vc)
             
             return navigationVc
@@ -57,7 +57,7 @@ class ArtistAlbumsVC : UIViewController {
             
             if artist.detail == nil {
                 
-                ArtistDetail.fetchNetworkData(artistId: self.artist.mbid, successCallback: { [weak self] artistDetail in
+                ArtistDetail.fetchNetworkData(artist: self.artist, successCallback: { [weak self] artistDetail in
                     
                     guard let _self = self else {
                         return

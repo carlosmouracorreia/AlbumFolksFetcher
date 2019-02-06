@@ -73,22 +73,26 @@ class Album : Mappable, Equatable, Hashable {
     **/
     static func fetchTopAlbums(artist: Artist, successCallback: @escaping ([Album]) -> (), errorCallback: @escaping (NetworkError) -> ()) {
         
-        let url = String(format: Constants.API_URLS.ArtistAlbums,artist.mbid)
-        print("Request Album with URL: " + url)
-
-        AF.request(url).responseArray(keyPath: "topalbums.album") { (response: DataResponse<[Album]>) in
-            let (success, error) = CoreNetwork.handleResponse(response)
+        
+        let url = artist.mbid != nil ? String(format: Constants.API_URLS.ArtistAlbumsById,artist.mbid!) : String(format: Constants.API_URLS.ArtistAlbumsByName,artist.name)
+        if let url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             
-            if let error = error {
-                errorCallback(error)
-            } else {
-                //I couldn't find a better way/place to link back the album with the artist than WMD/here (WMD - with this method)
+            AF.request(url).responseArray(keyPath: "topalbums.album") { (response: DataResponse<[Album]>) in
+                let (success, error) = CoreNetwork.handleResponse(response)
                 
-                for album in success! {
-                    album.artist = artist
+                if let error = error {
+                    errorCallback(error)
+                } else {
+                    //I couldn't find a better way/place to link back the album with the artist than WMD/here (WMD - with this method)
+                    
+                    for album in success! {
+                        album.artist = artist
+                    }
+                    successCallback(success!)
                 }
-                successCallback(success!)
             }
+        } else {
+            errorCallback(.WrongContent)
         }
     }
     

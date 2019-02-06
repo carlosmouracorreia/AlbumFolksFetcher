@@ -46,11 +46,12 @@ class ArtistDetail : Mappable {
         }
     }
     
-    static func fetchNetworkData(artistId: String, successCallback: @escaping (ArtistDetail) -> (), errorCallback: @escaping (NetworkError) -> ()) {
+    static func fetchNetworkData(artist: Artist, successCallback: @escaping (ArtistDetail) -> (), errorCallback: @escaping (NetworkError) -> ()) {
         
-        let URL = String(format: Constants.API_URLS.ArtistDetail,artistId)
-        
-            AF.request(URL).responseObject(keyPath: "artist") { (response: DataResponse<ArtistDetail>) in
+        let url = artist.mbid != nil ? String(format: Constants.API_URLS.ArtistDetailById,artist.mbid!) : String(format: Constants.API_URLS.ArtistDetailByName,artist.name)
+        if let url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+
+            AF.request(url).responseObject(keyPath: "artist") { (response: DataResponse<ArtistDetail>) in
                     let (success, error) = CoreNetwork.handleResponse(response)
                 
                     if let error = error {
@@ -59,6 +60,9 @@ class ArtistDetail : Mappable {
                         successCallback(success!)
                     }
             }
+        } else {
+            errorCallback(.WrongContent)
+        }
     }
     
 }

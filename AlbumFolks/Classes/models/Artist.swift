@@ -16,11 +16,11 @@ class Artist : Mappable {
     var requestedAlbumDetails : Dictionary<Album,Bool>?
     
     var photoUrl : URL?
-    var lastFmUrl : URL?
+    var lastFmUrl : URL!
     var listeners : Int?
     
     var name : String!
-    var mbid : String!
+    var mbid : String?
     
     
     init(_ artistPopulator: ArtistPopulator) {
@@ -41,7 +41,7 @@ class Artist : Mappable {
         }
         
         // We just return Artists if they have mbid associated
-        guard let mbid: String = map["mbid"].value(), let _ : Int? = mbid.isEmpty ? nil : 1 else {
+        guard let url: String = map["url"].value(), let _ : Int? = url.isEmpty ? nil : 1 else {
             return nil
         }
         
@@ -50,6 +50,9 @@ class Artist : Mappable {
     func mapping(map: Map) {
         name <- map["name"]
         mbid <- map["mbid"]
+        if let mbid = self.mbid, mbid.isEmpty {
+            self.mbid = nil
+        }
         photoUrl = LastFmImage.getImageUrl(imageMap: map,imageKey: "image")
         
         var urlString : String?
