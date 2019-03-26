@@ -19,7 +19,7 @@ class LoadingIndicatorView {
         
         let actInd: UIActivityIndicatorView = UIActivityIndicatorView()
         actInd.frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 30,height: 30))
-        actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        actInd.style = UIActivityIndicatorView.Style.whiteLarge
         actInd.center = CGPoint(x: loadingView.frame.size.width / 2,
                                 y: loadingView.frame.size.height / 2)
         loadingView.addSubview(actInd)

@@ -3,7 +3,7 @@ PODS:
   - AlamofireObjectMapper (6.0.0):
     - Alamofire (~> 5.0.0-beta.2)
     - ObjectMapper (~> 3.4)
-  - AlbumFolks (1.0.0):
+  - AlbumFolks (1.0.1):
     - AlamofireObjectMapper (= 6.0.0)
     - Kingfisher
     - ObjectMapper
@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
   AlamofireObjectMapper: 8cf0e01a1b36b485877033f8f6aa733977488da3
-  AlbumFolks: 5bb2219f067f7621bc2e2f2088e0faa29288470a
+  AlbumFolks: 99de75425752453d566bfcce41be68f64a9b0520
   DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
   Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51

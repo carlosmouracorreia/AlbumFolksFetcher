@@ -7,6 +7,7 @@
 
 This library allows for plug-n-play track (album information) download providing a simple UI/interface for search/fetch. Its inspired on [this original project](https://github.com/carlosmouracorreia/AlbumFolks) (persistent album info storage)
 
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

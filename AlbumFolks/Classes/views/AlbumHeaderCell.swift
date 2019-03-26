@@ -16,7 +16,7 @@ class AlbumHeaderCell : UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        saveSwitch.addTarget(self, action: #selector(stateChanged), for: UIControlEvents.valueChanged)
+        saveSwitch.addTarget(self, action: #selector(stateChanged), for: UIControl.Event.valueChanged)
     }
     
     @objc func stateChanged(switchState: UISwitch) {

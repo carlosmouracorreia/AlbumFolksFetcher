@@ -27,7 +27,7 @@ class ImageFileUtils {
         
         var compression = ImageFileUtils.COMPRESSION_QUALITY_FOR_IMAGE
         let maxFileSize = 600*1024
-        var imageData = UIImageJPEGRepresentation(image, compression)
+        var imageData = image.jpegData(compressionQuality: compression)
         
         if imageData == nil {
             return nil
@@ -36,7 +36,7 @@ class ImageFileUtils {
         while (imageData!.count > maxFileSize)
         {
             compression = compression * 0.1;
-            imageData = UIImageJPEGRepresentation(image, compression)
+            imageData = image.jpegData(compressionQuality: compression)
         }
         
         do {

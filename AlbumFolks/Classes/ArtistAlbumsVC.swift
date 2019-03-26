@@ -44,7 +44,7 @@ class ArtistAlbumsVC : UIViewController {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(UINib(nibName: AlbumCell.REUSE_ID, bundle: GenericHelpers.getBundle()), forCellWithReuseIdentifier: AlbumCell.REUSE_ID)
-            collectionView.register(UINib(nibName: ArtistInfoHeaderCell.REUSE_ID, bundle: GenericHelpers.getBundle()), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ArtistInfoHeaderCell.REUSE_ID)
+            collectionView.register(UINib(nibName: ArtistInfoHeaderCell.REUSE_ID, bundle: GenericHelpers.getBundle()), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistInfoHeaderCell.REUSE_ID)
             
         }
     }
@@ -295,11 +295,11 @@ extension ArtistAlbumsVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             
             
             if artistCell == nil {
-                artistCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ArtistInfoHeaderCell.REUSE_ID, for: indexPath) as? ArtistInfoHeaderCell
+                artistCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ArtistInfoHeaderCell.REUSE_ID, for: indexPath) as? ArtistInfoHeaderCell
                 
                 artistCell!.setArtistInfoCallback(artistInfoCallback)
                 artistCell!.setContent(artist)
@@ -314,7 +314,7 @@ extension ArtistAlbumsVC : UICollectionViewDataSource {
             
             return artistCell!
         } else {
-            let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "AlbumsGenericFooterCell", for: indexPath)
+            let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "AlbumsGenericFooterCell", for: indexPath)
             
             for view in cell.subviews {
                 view.removeFromSuperview()
@@ -340,7 +340,7 @@ extension ArtistAlbumsVC : UICollectionViewDataSource {
                     let text = "See more albums on Last FM"
                     let textRange = NSMakeRange(0, text.count)
                     let attributedText = NSMutableAttributedString(string: text)
-                    attributedText.addAttribute(NSAttributedStringKey.underlineStyle , value: NSUnderlineStyle.styleSingle.rawValue, range: textRange)
+                    attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)
                     label.attributedText = attributedText
                     label.textColor = UIColor.blue
                     
