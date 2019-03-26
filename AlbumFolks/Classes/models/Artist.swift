@@ -8,6 +8,7 @@
 
 import Alamofire
 import ObjectMapper
+import AlamofireObjectMapper
 
 class Artist : Mappable {
     

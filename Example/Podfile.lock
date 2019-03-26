@@ -1,7 +1,10 @@
 PODS:
-  - Alamofire (5.0.0.beta.1)
-  - AlbumFolks (0.4):
-    - Alamofire (~> 5.0.0.beta.1)
+  - Alamofire (5.0.0-beta.3)
+  - AlamofireObjectMapper (6.0.0):
+    - Alamofire (~> 5.0.0-beta.2)
+    - ObjectMapper (~> 3.4)
+  - AlbumFolks (1.0.0):
+    - AlamofireObjectMapper (= 6.0.0)
     - DynamicBlurView (~> 2.0)
     - Kingfisher
     - ObjectMapper
@@ -15,6 +18,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireObjectMapper
     - DynamicBlurView
     - Kingfisher
     - ObjectMapper
@@ -24,8 +28,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
-  AlbumFolks: ce813574ebcbe3994f26168961f24cf41c05d20c
+  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
+  AlamofireObjectMapper: 8cf0e01a1b36b485877033f8f6aa733977488da3
+  AlbumFolks: e2a5bb9f6d69f2e7e58823f79602b01592481f95
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51

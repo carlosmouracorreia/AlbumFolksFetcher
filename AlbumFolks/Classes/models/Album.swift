@@ -8,6 +8,7 @@
 
 import ObjectMapper
 import Alamofire
+import AlamofireObjectMapper
 
 
 class Album : Mappable, Equatable, Hashable {
