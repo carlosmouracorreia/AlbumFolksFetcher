@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     fileprivate var pasteBoardChangeCount = UIPasteboard.general.changeCount
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         /* https://github.com/carlosmouracorreia/AlbumFolksFetcher/blob/master/Documentation/UITesting.md
          Logic for UI Testing to work seamlessly needs to be within the app entrypoint

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlbumFolks'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Track information fetcher from LastFM API.'
 
 # This description is used to generate tags and improve search results.
@@ -41,6 +41,6 @@ TODO: Add long description of the pod here.
   s.dependency 'AlamofireObjectMapper', '6.0.0'
   s.dependency 'ObjectMapper'
   s.dependency 'Kingfisher'
-  s.dependency 'DynamicBlurView', '~> 2.0'
+  s.dependency 'PopupDialog', '0.9.2'
 
 end

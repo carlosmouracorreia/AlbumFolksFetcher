@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import PopupDialog
 
 public var AF_ARTIST_ALBUMS_MAX_ALBUMS_TO_SHOW = 12
 
